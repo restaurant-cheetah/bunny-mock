@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 module BunnyMock
   class Exchange
+    def on_return(&block)
+      @on_return = block
+
+      self
+    end
+
     class << self
       ##
       # Create a new {BunnyMock::Exchange} instance
